@@ -1,0 +1,73 @@
+<template>
+  <div id="app">
+
+    <div class="none">
+      <img src="./assets/logo.png">
+      <router-view />
+    </div>
+
+    <div class="Wrap text-center none">
+      <h1>Vue Typeahead</h1>
+      <p>Simple VueJS 2 TypeAhead component builded with Fetch Browser API.</p>
+      <p>使用fetch构建过滤器demo</p>
+      <!-- Our component-->
+      <typeahead source="https://jsonplaceholder.typicode.com/posts"
+                 placeholder="What TV Serie you are looking for..."
+                 filter-key="title"
+                 :start-at="2">
+      </typeahead>
+    </div>
+    <div class="none">
+      <h1>Vue axios</h1>
+      <axioscom></axioscom>
+    </div>
+
+    <music></music>
+  </div>
+</template>
+
+<script>
+import Typeahead from './components/Typeahead.vue'
+import axioscom from './components/axios'
+import music from './components/music'
+export default {
+  name: 'App',
+  components: {
+    Typeahead,
+    axioscom,
+    music
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+h1 {
+  font-size: 3vw;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+  font-family: "Lobster", Arial, sans-serif;
+}
+.text-center {
+  text-align: center;
+}
+.Wrap {
+  max-width: 60vw;
+  margin: 5vh auto;
+}
+.none {
+  display: none;
+}
+</style>
